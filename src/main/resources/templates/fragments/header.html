@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<nav th:fragment="header" class="navbar navbar-dark bg-dark px-4">
+
+    <a class="navbar-brand fw-bold d-flex align-items-center"
+       th:href="@{/}">
+
+        <img th:src="@{/img/img.png}"
+             alt="Logo NexBot"
+             width="45"
+             height="45"
+             class="me-2">
+
+        <span>NexBot</span>
+    </a>
+
+    <a th:href="@{/login}" class="btn btn-outline-light btn-sm">
+        Connexion
+    </a>
+
+</nav>
+
+</body>
+</html>

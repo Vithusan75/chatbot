@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base :: layout(~{::title}, ~{::#page-content})}">
+<head>
+    <title>Accueil - Chatbot IA</title>
+</head>
+<body>
+<div id="page-content">
+    <h1 class="display-4 fw-bold mb-3">Discutez avec l'IA</h1>
+
+    <a th:href="@{/login}" class="btn btn-primary btn-lg px-5">Commencer</a>
+</div>
+</body>
+</html>
