@@ -9,3 +9,4 @@ class ChatbotApplication
 fun main(args: Array<String>) {
     runApplication<ChatbotApplication>(*args)
 }
+

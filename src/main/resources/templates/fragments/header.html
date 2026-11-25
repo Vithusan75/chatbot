@@ -1,27 +1,41 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<nav th:fragment="header" class="navbar navbar-dark bg-dark px-4">
+<div th:fragment="header">
+    <nav class="navbar navbar-dark bg-dark px-4">
+        <a class="navbar-brand fw-bold d-flex align-items-center"
+           th:href="@{/}">
+            <img th:src="@{/img/img.png}"
+                 alt="Logo NexBot"
+                 width="45"
+                 height="45"
+                 class="me-2">
+            <span>NexBot</span>
+        </a>
 
-    <a class="navbar-brand fw-bold d-flex align-items-center"
-       th:href="@{/}">
+        <a th:href="@{/login}" class="btn btn-outline-light btn-sm">
+            Connexion
+        </a>
+    </nav>
 
-        <img th:src="@{/img/img.png}"
-             alt="Logo NexBot"
-             width="45"
-             height="45"
-             class="me-2">
+    <div class="p-3">
+        <!-- Nouvelle conversation -->
+        <a th:href="@{/}" class="btn btn-outline-light w-100 mb-4">
+            + Nouvelle conversation
+        </a>
 
-        <span>NexBot</span>
-    </a>
-
-    <a th:href="@{/login}" class="btn btn-outline-light btn-sm">
-        Connexion
-    </a>
-
-</nav>
+        <h6 class="text-secondary">Historique</h6>
+        <div class="list-group">
+            <a th:each="c : ${conversations}"
+               th:href="@{/conversations/{id}(id=${c.id})}"
+               th:text="${c.titre}"
+               class="list-group-item list-group-item-action"
+               th:classappend="${conversation != null and conversation.id == c.id} ? 'active' : ''">
+            </a>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

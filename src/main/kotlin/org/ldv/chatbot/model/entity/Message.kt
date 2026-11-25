@@ -17,5 +17,8 @@ class Message(
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    var typeMessage: TypeMessage
+    var typeMessage: TypeMessage,
+
+    @ManyToOne
+var conversation: Conversation? = null
 )
