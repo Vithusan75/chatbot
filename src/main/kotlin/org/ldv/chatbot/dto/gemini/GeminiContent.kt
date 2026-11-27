@@ -1,4 +1,7 @@
 package org.ldv.chatbot.dto.gemini
 
-class GeminiContent {
-}
+data class GeminiContent (
+    val role: String,
+    val parts: List<GeminiPart>
+)
+

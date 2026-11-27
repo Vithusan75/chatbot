@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:replace="${title}">Chatbot IA</title>
     <link rel="stylesheet" th:href="@{/vendor/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
 
 <div th:replace="~{fragments/header :: header}"></div>
 
-<main class="container my-auto text-center py-5">
+<div class="flex-grow-1 d-flex flex-column">
     <div th:replace="${content}"></div>
-</main>
+</div>
 
 <div th:replace="~{fragments/footer :: footer}"></div>
 

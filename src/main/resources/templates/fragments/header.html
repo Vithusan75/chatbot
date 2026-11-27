@@ -3,38 +3,47 @@
 <body>
 
 <div th:fragment="header">
-    <nav class="navbar navbar-dark bg-dark px-4">
-        <a class="navbar-brand fw-bold d-flex align-items-center"
-           th:href="@{/}">
-            <img th:src="@{/img/img.png}"
-                 alt="Logo NexBot"
-                 width="45"
-                 height="45"
-                 class="me-2">
-            <span>NexBot</span>
-        </a>
+    <nav class="navbar navbar-dark bg-dark px-4 py-2 shadow-sm">
+        <div class="container-fluid d-flex align-items-center justify-content-between gap-3">
+            <a class="navbar-brand fw-bold d-flex align-items-center m-0"
+               th:href="@{/}">
+                <img th:src="@{/img/img.png}"
+                     alt="Logo NexBot"
 
-        <a th:href="@{/login}" class="btn btn-outline-light btn-sm">
-            Connexion
-        </a>
-    </nav>
+                     height="42"
+                     class="me-2 d-inline-block align-top">
 
-    <div class="p-3">
-        <!-- Nouvelle conversation -->
-        <a th:href="@{/}" class="btn btn-outline-light w-100 mb-4">
-            + Nouvelle conversation
-        </a>
-
-        <h6 class="text-secondary">Historique</h6>
-        <div class="list-group">
-            <a th:each="c : ${conversations}"
-               th:href="@{/conversations/{id}(id=${c.id})}"
-               th:text="${c.titre}"
-               class="list-group-item list-group-item-action"
-               th:classappend="${conversation != null and conversation.id == c.id} ? 'active' : ''">
             </a>
+
+            <div class="d-flex align-items-center gap-2">
+                <a th:href="@{/}" class="btn btn-outline-light btn-sm">
+                    + Nouvelle conversation
+                </a>
+
+                <div th:if="${conversations != null}" class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Historique
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow" style="min-width: 260px; max-height: 60vh; overflow-y: auto;">
+                        <li th:each="c : ${conversations}">
+                            <a class="dropdown-item text-truncate"
+                               th:href="@{/conversations/{id}(id=${c.id})}"
+                               th:text="${c.titre}"
+                               th:classappend="${conversation != null and conversation.id == c.id} ? 'active' : ''">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a th:href="@{/login}" class="btn btn-primary btn-sm">
+                    Connexion
+                </a>
+            </div>
         </div>
-    </div>
+    </nav>
 </div>
 
 </body>

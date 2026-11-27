@@ -1,4 +1,5 @@
 package org.ldv.chatbot.dto.gemini
 
-class GeminiCandidate {
-}
+data class GeminiCandidate (
+    val content : GeminiContent
+)

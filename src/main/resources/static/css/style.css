@@ -1,0 +1,79 @@
+.chat-page {
+    width: 100%;
+    flex: 1 1 auto;
+    background-image: url("/img/gta.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.chat-page > section {
+    background-color: transparent;
+}
+
+.welcome-card {
+    background-color: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    max-width: 540px;
+}
+
+.chat-messages-container {
+    max-width: 880px;
+}
+
+.chat-page .message-content {
+    background-color: rgba(255, 255, 255, 0.94);
+    padding: 0.85rem 1.1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.chat-composer-wrapper {
+    background: transparent;
+}
+
+.chat-composer-box {
+    max-width: 960px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+.chat-composer-box form > div {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    gap: 10px;
+    width: 100%;
+}
+
+.model-select-wrapper,
+.model-current,
+.send-button-wrapper {
+    flex-shrink: 0;
+}
+
+.model-select {
+    min-width: 185px;
+}
+
+.model-current {
+    white-space: nowrap;
+    margin-bottom: 14px;
+}
+
+.min-w-0 {
+    min-width: 0;
+}
+
+.chat-page .flex-grow-1 {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+}
+
+.chat-page textarea {
+    width: 100% !important;
+    min-height: 58px;
+    resize: vertical;
+}

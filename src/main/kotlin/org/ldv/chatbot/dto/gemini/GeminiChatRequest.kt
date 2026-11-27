@@ -1,4 +1,5 @@
 package org.ldv.chatbot.dto.gemini
 
-class GeminiChatRequest {
-}
+data class GeminiChatRequest (
+    val contents: List<GeminiContent>
+)
